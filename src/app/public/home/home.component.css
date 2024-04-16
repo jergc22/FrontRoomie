@@ -1,0 +1,24 @@
+img{
+    width: 650px;
+    height: auto;
+}
+.container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 128px;
+    position: fixed;
+}
+
+p{
+    font-size: 50px;
+    color: black;
+}
+
+@media(max-width: 610px){
+    img{
+        width: 400px;
+    }
+}

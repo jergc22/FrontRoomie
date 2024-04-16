@@ -1,0 +1,103 @@
+<div class="container">
+    <mat-card>
+        <a class="home-link" href="/home">
+            <mat-icon>arrow_back</mat-icon>
+        </a>
+        <mat-card-content>
+            <div class="title">
+                <mat-card-title>Editar Usuario</mat-card-title>
+            </div>
+            <form [formGroup]="userForm" enctype="multipart/form-data">
+                <div class="form-row">
+                    <div class="form-column">
+                        <mat-form-field>
+                            <mat-label>Nombre de Usuario</mat-label>
+                            <input matInput formControlName="username" required [disabled]="true">
+                        </mat-form-field>
+                    </div>
+                    <div class="form-column">
+                        <mat-form-field>
+                            <mat-label>Correo Electrónico</mat-label>
+                            <input matInput formControlName="email" required>
+                        </mat-form-field>
+                    </div>               
+                    
+                </div>
+                <div class="form-row">
+                    <div class="form-column">
+                        <mat-form-field>
+                            <mat-label>Nombre</mat-label>
+                            <input matInput formControlName="name" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-column">
+                        <mat-form-field>
+                            <mat-label>Apellido</mat-label>
+                            <input matInput formControlName="surname" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-column">
+                        <mat-form-field>
+                            <mat-label>Instagram</mat-label>
+                            <input matInput formControlName="instagram">
+                        </mat-form-field>
+                    </div>
+                    <div class="form-column">
+                        <mat-form-field>
+                            <mat-label>Descripción</mat-label>
+                            <textarea matInput formControlName="description"></textarea>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+                <div class="form-row">
+                    <div class="form-column">
+                        <mat-form-field>
+                            <mat-label>¿Fumas?</mat-label>
+                            <mat-select formControlName="smoke">
+                                <mat-option [value]="true">Sí</mat-option>
+                                <mat-option [value]="false">No</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-column">
+                        <mat-form-field>
+                            <mat-label>¿Trabajas?</mat-label>
+                            <mat-select formControlName="work">
+                                <mat-option [value]="true">Sí</mat-option>
+                                <mat-option [value]="false">No</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-column">
+                        <mat-form-field>
+                            <mat-label>¿Estudias?</mat-label>
+                            <mat-select formControlName="study">
+                                <mat-option [value]="true">Sí</mat-option>
+                                <mat-option [value]="false">No</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-column">
+                        <mat-form-field>
+                            <mat-label>Fecha de Nacimiento</mat-label>
+                            <input matInput [matDatepicker]="picker" formControlName="birth">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-column">
+                        <input type="file" class="inputfile" id="file" name="file" accept="image/*"
+                            (change)="onFileSelected($event)">
+                        <label for="file">{{ imageFileName }}</label>
+                    </div>
+                </div>
+            </form>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button style="background-color: #007E3E; " (click)="onSubmit()">
+                <p>Guardar</p>
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>

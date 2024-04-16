@@ -1,0 +1,31 @@
+<div class="container">
+<mat-card class="main">
+    <a class="home-link" href="/home">
+        <mat-icon>arrow_back</mat-icon>
+      </a>
+    <mat-card-header>
+        <img src="../../../assets/images/logo2.png" alt="Logo" class="logo">
+    </mat-card-header>
+    <hr class="divider">
+    <mat-card-content>
+        <form [formGroup]="loginForm">
+            <h2>Inicar Sesion</h2>
+            <mat-form-field>
+                <input matInput placeholder="user" formControlName="username">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput type="password" formControlName="password" placeholder="password">
+            </mat-form-field>
+            <button mat-raised-button class="login-button" 
+            style="background-color: #004B23; color: white;"
+            (click)="login()">
+                <p *ngIf="!loading">ENTRAR</p>
+                <mat-spinner *ngIf="loading" diameter="20" class="spinner"></mat-spinner>
+            </button>
+                <br>
+            <a href="/auth/sign-up">No estas registrado?</a>
+            <br>
+            <a href="/auth/pwd-recovery">Olvidaste tu contraseña?</a>
+        </form>
+    </mat-card-content>
+</mat-card></div>

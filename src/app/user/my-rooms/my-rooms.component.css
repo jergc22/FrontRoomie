@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .container {
+    margin-top: 128px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    background-color: #f5f5f5;
+    padding-bottom: 25px;
+  }
+  mat-paginator{
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+.card-container {
+    margin-top: 30px;
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  
+  .card {
+    width: 600px;
+  }
+  
+  img{
+    width: auto;
+    height: 290px;
+  } 
+  
+  
+  .image {
+    position: relative;
+    min-height: 250px;
+    width: auto;
+  }
+
+  .photo{
+    display: flex;
+    justify-content: center;
+    width: 600px;
+  }
+
+  .room-image {
+    display: block;
+    height: 250px;
+    width: auto;
+    justify-self: center;
+  }
+  
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  
+  .arrow:focus {
+    outline: none;
+  }
+  
+  .arrow:nth-child(2) {
+    left: 0;
+  }
+  
+  .arrow:nth-child(3) {
+    right: 15px;
+  }
+  p{
+    width: auto;
+    margin: 5px;
+    display: flex;
+  }
+
+  .extras{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    margin-bottom: 15px;
+  }
+  .token{
+    display: flex;
+    justify-content: center;
+  }
+  mat-card-content{
+    margin: 10px;
+  }
+
+  mat-card-header{
+    margin-top: 0px;
+  }
+  strong{
+    margin-right: 5px;
+  }
+  mat-card-title{
+    font-size: xx-large;
+    font-weight: bold;
+    margin-left: 5px;
+  }
+  mat-card-subtitle{
+    margin-left: 5px;
+  }
+
+
+  .button button{
+    font-family: 'MiFuente';
+    background-color: #007E3E;
+    font-size: 15px;
+    padding: 5px;
+    color: white;
+  }
+
+  .delete button{
+    background-color: #cc0000;
+  }
+
+  .button{
+    justify-content: right;
+    text-align: right;
+    margin: 15px;
+  }
+
+  .add{
+    background-color: #007E3E;
+    position: fixed;
+    bottom: 66px;    
+    left: 16px;       
+    z-index: 1000;  
+  }
+
+  .buttons{
+    display: flex;
+    justify-content: center;
+  }
+
+
+  @media(max-width: 610px){
+    .container{
+        margin-top: 112px;
+    }
+    .card{
+      width: 352px;
+    }
+    .extras{
+      justify-content: left;
+      width: 250px;
+    }
+
+    mat-paginator{
+      font-size: 10px;
+    }
+  }
+  

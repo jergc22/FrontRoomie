@@ -1,0 +1,36 @@
+*{
+    font-family: 'MiFuente';
+}
+
+h1{
+    font-family: 'MiFuente';
+    text-align: center;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    font-size: medium;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.options{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.cancel{
+    background-color: #cc0000;
+    color: white;
+}
+
+.save{
+    background-color: #007E3E;
+    color: white;
+}

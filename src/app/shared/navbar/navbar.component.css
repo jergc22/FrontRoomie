@@ -1,0 +1,86 @@
+
+.mat-toolbar {
+    background-color: #007E3E;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+  }
+  
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+img{
+  
+    margin-top: 15px;
+    width: 70px;
+    height: auto;
+}
+.perfil{
+  margin-top: 15px;
+}
+
+.button-row button:first-child {
+    margin-right: 8px;
+}
+
+.button-row button {
+    background-color: #004B23;
+    border: 1px solid white;
+    color: white;
+}
+
+.main {
+    display: flex;
+    width: 100%;
+}
+.main button {
+    flex: auto;
+    font-size: 35px;
+    font-weight: 600;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 50vw;
+  }
+.log{
+  font-size: 20px;
+}
+
+.main button:hover {
+    background-color: #004B23;
+    color: white;
+    
+}
+
+.main button.active {
+    background-color: #004B23;
+    color: white;
+  }
+  
+  .main button.active:hover {
+    background-color: #004B23; 
+    color: white;
+  }
+
+  p{
+    font-family: 'MiFuente';
+  }
+
+  @media (max-width: 600px) {
+     .main{
+      position: relative;
+    } 
+    .button-row{
+      z-index: 2;
+    }
+    img{
+      width: 50px;
+      height: auto;
+    }
+    .perfil{
+      z-index: 1000;
+    }
+
+}
+  

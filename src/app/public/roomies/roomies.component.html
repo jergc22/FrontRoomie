@@ -1,0 +1,42 @@
+<div class="container">
+    <mat-form-field>
+        <mat-label>Seleccionar Ciudad</mat-label>
+        <mat-select [(value)]="selectedCityId" (selectionChange)="onCityChange($event.value)">
+            <mat-option *ngFor="let city of cities" [value]="city.id">{{ city.name }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button mat-fab class="add" (click)="addRoomie()">
+        <mat-icon>add</mat-icon>
+    </button>
+    <div class="card-container">
+        <mat-card *ngFor="let roomie of roomies" class="card">
+            <mat-card-header>
+                <mat-card-title-group>
+                    <mat-card-title> {{roomie.title}} </mat-card-title>
+                    <mat-card-subtitle> {{roomie.user_name}} </mat-card-subtitle>
+                    <mat-card-subtitle> {{roomie.date_posted}} </mat-card-subtitle>
+                    <mat-card-subtitle> {{roomie.city_name}} </mat-card-subtitle>
+                    <img mat-card-md-image [src]="userImages[roomie.user_id] || '../../../assets/images/logo2.png'"
+                        alt="image">
+                </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content>
+                <p> {{roomie.content}} </p>
+            </mat-card-content>
+            <div class="button" *ngIf="!isAdmin()">
+                <button mat-raised-button (click)="openDialog(roomie.user_id)">Contactar</button>
+            </div>
+            <div class="buttons" *ngIf="isAdmin()" >
+                <div class="button">
+                    <button mat-raised-button (click)="editRoomie(roomie)">Editar</button>
+                  </div>
+                <div class="button delete" (click)="confirmDelete(roomie.id)">
+                    <button mat-raised-button>Eliminar</button>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+    <mat-paginator [length]="totalRoomies" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+        (page)="onPageChange($event)">
+    </mat-paginator>
+</div>

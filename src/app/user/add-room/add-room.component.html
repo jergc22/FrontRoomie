@@ -1,0 +1,66 @@
+<div class="div">
+    <mat-card>
+        <a class="home-link" href="/home">
+            <mat-icon>arrow_back</mat-icon>
+        </a>
+        <mat-card-content>
+            <div class="title">
+                <mat-card-title>Añadir Habitación</mat-card-title>
+            </div>
+            <form [formGroup]="form">
+                <mat-form-field>
+                    <mat-label>Titulo</mat-label>
+                    <input matInput formControlName="title" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Ciudad</mat-label>
+                    <mat-select matInput formControlName="city_id" required>
+                        <mat-option *ngFor="let city of cities" [value]="city.id">{{city.name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Dirección</mat-label>
+                    <input matInput formControlName="location" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Número de baños</mat-label>
+                    <input matInput type="number" formControlName="n_baths" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Número de habitaciones</mat-label>
+                    <input matInput type="number" formControlName="n_rooms" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Número de compañeros de cuarto</mat-label>
+                    <input matInput type="number" formControlName="n_roomies" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Precio</mat-label>
+                    <input matInput type="number" formControlName="price" required>
+                </mat-form-field>
+                <div class="check">
+                    <div class="check-row">
+                        <mat-checkbox formControlName="smoke">¿Permitido fumar?</mat-checkbox>
+                        <mat-checkbox formControlName="pet">¿Se permiten mascotas?</mat-checkbox>
+                    </div>
+                    <div class="check-row">
+                        <mat-checkbox formControlName="priv_bath">¿Baño privado?</mat-checkbox>
+                        <mat-checkbox formControlName="garage">¿Garaje incluido?</mat-checkbox>
+                    </div>
+                </div>
+                <mat-form-field>
+                    <mat-label>Descripción</mat-label>
+                    <textarea matInput formControlName="description" required></textarea>
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button (click)="onSubmit()">
+                <ng-container *ngIf="!isLoading">
+                    <p>Siguiente</p>
+                </ng-container>
+                <mat-spinner *ngIf="isLoading" diameter="20"></mat-spinner>
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>

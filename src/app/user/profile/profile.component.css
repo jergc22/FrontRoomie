@@ -1,0 +1,42 @@
+.container{
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+}
+mat-card{
+    
+    margin: 100px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding: 50px;
+    width: 500px;
+}
+mat-card-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    width: 200px;
+}
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+.button button{
+    font-family: 'MiFuente';
+    background-color: #007E3E;
+    font-size: 15px;
+    padding: 5px;
+    color: white;
+  }
+
+  @media(max-width: 610px){
+    mat-card{
+        margin-top: 20px;
+    }
+  }

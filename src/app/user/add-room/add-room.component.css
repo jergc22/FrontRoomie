@@ -1,0 +1,69 @@
+
+.div{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+}
+mat-card{
+    width: fit-content;
+    margin-bottom: 100px;
+}
+.title{
+    text-align: center;
+    margin: 20px;
+    margin-top: 0;
+
+}
+
+.home-link{
+    margin: 20px;
+    color: #007E3E;
+    width: fit-content;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.check-row{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+mat-form-field{
+    width: 400px;
+}
+mat-checkbox.mat-accent {
+    --mat-option-selected-state-label-text-color: #007E3E;
+}
+mat-card-actions{
+    justify-content: center;
+}
+
+mat-card-actions button{
+    font-family: 'MiFuente';
+    font-size: medium;
+    background-color: #007E3E;
+    color: white;
+}
+
+mat-spinner{
+    color: white;
+}
+
+
+
+
+@media(max-width: 610px){
+    mat-form-field{
+        width: 78%;
+    }
+    mat-card{
+        width: 90%;
+    }
+}

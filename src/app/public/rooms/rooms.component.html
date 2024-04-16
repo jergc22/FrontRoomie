@@ -1,0 +1,83 @@
+<div class="container">
+  <mat-form-field>
+    <mat-label>Seleccionar Ciudad</mat-label>
+    <mat-select [(value)]="selectedCityId" (selectionChange)="onCityChange($event.value)">
+      <mat-option *ngFor="let city of cities" [value]="city.id">{{ city.name }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-fab class="add" (click)="addRoom()">
+    <mat-icon>add</mat-icon>
+  </button>
+  <div class="card-container">
+    <mat-card *ngFor="let room of rooms" class="card">
+      <mat-card-header class="image">
+        <ng-container *ngIf="room.images && room.images.length > 0; else defaultImage">
+          <div class="photo">
+            <img [src]="room.images[room.currentImageIndex || 0]" alt="Imagen de la habitación" class="room-image">
+          </div>
+          <button class="arrow" (click)="setCurrentImage(room, -1)">&#8250;</button>
+          <button class="arrow" (click)="setCurrentImage(room, 1)"> &#8249;</button>
+        </ng-container>
+        <ng-template #defaultImage>
+          <div class="photo">
+            <img src="../../../assets/images/logo2.png" alt="Logo" class="room-image">
+          </div>
+        </ng-template>
+      </mat-card-header>
+
+      <mat-card-content>
+        <mat-card-title>{{ room.title }}</mat-card-title>
+        <mat-card-subtitle> {{room.user_name}} </mat-card-subtitle>
+        <mat-card-subtitle> {{room.city_name}} </mat-card-subtitle>
+        <mat-card-subtitle> #{{room.id}} </mat-card-subtitle>
+        <br>
+        <p><strong>Fecha de creacion:</strong> {{ room.date_created }}</p>
+        <p><strong>Descripcion:</strong> {{ room.description }}</p>
+        <p><strong>Dirección:</strong> {{ room.location }}</p>
+        <p><strong>Precio:</strong> {{ room.price }}€</p>
+        <div class="extras">
+          <div class="token">
+            <p><strong>Nº Baños:</strong>{{ room.n_baths }} </p>
+          </div>
+          <div class="token">
+            <p><strong>Nº Habitaciones:</strong>{{ room.n_rooms }}</p>
+          </div>
+          <div class="token">
+            <p><strong>Nº Roomies:</strong>{{ room.n_roomies }}</p>
+          </div>
+          <div class="token">
+            <p><strong>Garage:</strong> </p><mat-icon>{{ room.garage ? 'check' : 'close' }}</mat-icon>
+          </div>
+          <div class="token">
+            <p><strong>Mascotas?:</strong> <mat-icon>{{ room.pet ? 'check' : 'close' }}</mat-icon></p>
+          </div>
+          <div class="token">
+            <p><strong>Baño privado:</strong> <mat-icon>{{ room.priv_bath ? 'check' : 'close' }}</mat-icon></p>
+          </div>
+          <div class="token">
+            <p><strong>Se puede fumar?:</strong> <mat-icon>{{ room.smoke ? 'check' : 'close' }}</mat-icon></p>
+          </div>
+        </div>
+      </mat-card-content>
+      <div class="contact" *ngIf="!isAdmin()">
+        <button mat-raised-button (click)="openDialog(room.user_id)">Contactar</button>
+      </div>
+      <div class="buttons" *ngIf="isAdmin()">
+        <div class="button">
+          <button mat-raised-button (click)="editRoom(room)">Editar</button>
+        </div>
+        <div class="button delete">
+          <button mat-raised-button (click)="confirmDelete(room.id)">Eliminar</button>
+        </div>
+        <div class="button">
+          <button mat-raised-button (click)="goToImages(room.id)">Imagenes</button>
+        </div>
+      </div>
+
+    </mat-card>
+  </div>
+  <mat-paginator [length]="totalRooms" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+    (page)="onPageChange($event)">
+  </mat-paginator>
+
+</div>

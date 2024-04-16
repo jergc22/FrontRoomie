@@ -1,0 +1,67 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <a href="/home">
+            <img src="../../../assets/images/logo2.png" alt="">
+        </a>
+        <span class="example-spacer"></span>
+        <div class="button-row" *ngIf="!logged">
+            <button mat-raised-button (click)="goToLogin()">
+                <p class="log">Iniciar Sesion</p>
+            </button>
+            <button mat-raised-button (click)="goToSignUp()">
+                <p class="log">Registrarse</p>
+            </button>
+        </div>
+        <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="logged" class="perfil">
+            <mat-icon class="perfilButton">menu</mat-icon>
+        </button>
+        <mat-menu #menu>
+            <div *ngIf="!admin">
+                <button mat-menu-item (click)="goProfile()">
+                    <mat-icon>account_circle</mat-icon>
+                    <span>Perfil</span>
+                </button>
+                <button mat-menu-item (click)="goToMyRooms()">
+                    <mat-icon>bed</mat-icon>
+                    <span>Mis Rooms</span>
+                </button>
+                <button mat-menu-item (click)="goToMyRoomies()">
+                    <mat-icon>groups</mat-icon>
+                    <span>Mis Roomies</span>
+                </button>
+                <button mat-menu-item (click)="logout()">
+                    <mat-icon>exit_to_app</mat-icon>
+                    <span>Salir</span>
+                </button>
+            </div>
+            <div *ngIf="admin">
+                <button mat-menu-item (click)="goProfile()">
+                    <mat-icon>account_circle</mat-icon>
+                    <span>Perfil</span>
+                </button>
+                <button mat-menu-item (click)="goToUsers()">
+                    <mat-icon>groups</mat-icon>
+                    <span>Users</span>
+                </button>
+                <button mat-menu-item (click)="logout()">
+                    <mat-icon>exit_to_app</mat-icon>
+                    <span>Salir</span>
+                </button>
+            </div>
+        </mat-menu>
+    </mat-toolbar-row>
+    <mat-toolbar-row>
+        <div class="main">
+            <button mat-button [class.active]="activeButton === 'rooms'" (click)="setActiveButton('rooms')">
+                <p class="switch">ROOMS</p><mat-icon
+                    style="font-size: 24px; margin-right: 8px; width: 24px; margin-bottom: 3px;">bed</mat-icon>
+            </button>
+            <button mat-button [class.active]="activeButton === 'roomies'" (click)="setActiveButton('roomies')">
+                <p class="switch">ROOMIES</p>
+                <mat-icon style="font-size: 24px; margin-right: 8px; width: 24px; margin-bottom: 5px;"
+                    class="ir">groups</mat-icon>
+            </button>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>

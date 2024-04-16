@@ -1,0 +1,24 @@
+<h1>Editar Roomie</h1>
+<div mat-dialog-content>
+    <form [formGroup]="roomieForm">
+        <mat-form-field>
+            <mat-label>Titulo</mat-label>
+            <input matInput formControlName="title">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Ciudad</mat-label>
+            <mat-select matInput formControlName="city_id" required>
+                <mat-option *ngFor="let city of cities" [value]="city.id">{{city.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Descripcion</mat-label>
+            <textarea matInput formControlName="content"></textarea>
+        </mat-form-field>
+    </form>
+</div>
+
+<div class="buttons" mat-dialog-actions>
+    <button mat-raised-button class="cancel" (click)="dialogRef.close()">Cancelar</button>
+    <button mat-raised-button  class="save" (click)="save()" [disabled]="!roomieForm.valid">Guardar</button>
+</div>

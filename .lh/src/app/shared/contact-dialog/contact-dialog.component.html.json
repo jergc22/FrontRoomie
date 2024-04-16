@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/app/shared/contact-dialog/contact-dialog.component.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1699355590262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1699355590262,
+            "name": "Commit-0",
+            "content": "<h1>Informacion de contacto</h1>\n<div mat-dialog-content>\n  <p><strong>Email: </strong> {{info.email}} </p>\n  <p><strong>Instagram: </strong> {{info.instagram}} </p>\n  <p><strong>Descripción: </strong> {{info.description}} </p>\n\n</div>\n<div mat-dialog-actions class=\"button\">\n  <button mat-button mat-dialog-close><p>Cerrar</p></button>\n</div>\n"
+        }
+    ]
+}

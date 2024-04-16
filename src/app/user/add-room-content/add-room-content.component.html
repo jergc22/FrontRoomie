@@ -1,0 +1,26 @@
+<div class="main">
+    <mat-card>
+        <div class="arrow">
+            <a class="home-link" href="/home">
+                <mat-icon>arrow_back</mat-icon>
+            </a>
+        </div>
+        <h2>Imagenes</h2>
+        <form (submit)="onSubmit($event)" enctype="multipart/form-data">
+            <input type="file" (change)="onFileSelected($event)" class="inputfile" id="file" name="file"
+                accept="image/*">
+            <label for="file">{{ imageFileName }}</label>
+            <button mat-raised-button type="submit">Subir Imagen</button>
+        </form>
+        <div *ngIf="images.length > 0" class="images">
+            <h3>Imágenes cargadas</h3>
+            <div *ngFor="let image of images" class="row">
+                <img [src]="image.content" alt="Image" width="150">
+                <button mat-raised-button (click)="confirmDeleteImage(image.id)">Eliminar</button>
+            </div>
+        </div>
+        <button mat-raised-button (click)="goHome()">
+            Terminar
+        </button>
+    </mat-card>
+</div>

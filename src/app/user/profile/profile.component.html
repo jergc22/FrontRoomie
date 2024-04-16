@@ -1,0 +1,29 @@
+<div class="container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>PERFIL</mat-card-title>
+            <br>
+            <br>
+            <img [src]="user.image ? user.image : '../../../assets/images/logo2.png'" alt="Foto de perfil" class="profile-picture">
+        </mat-card-header>
+        <br>
+        <mat-card-content>
+            <p><strong>Nombre:  </strong>{{user.name}}</p>
+            <p><strong>Apellidos:  </strong>{{user.surname}}</p>
+            <p><strong>Username:  </strong>{{user.username}}</p>
+            <p><strong>Email:  </strong>{{user.email}}</p>
+            <p><strong>Registrado desde:  </strong>{{user.date_created}}</p>
+            <p><strong>Fumador?  </strong>{{ user.smoke ? 'Si' : 'No' }}</p>
+            <p><strong>Instagram:  </strong>{{user.instagram}}</p>
+            <p><strong>Trabajando?  </strong> {{ user.work ? 'Si' : 'No' }}</p>
+            <p><strong>Estudiando?  </strong>{{ user.study ? 'Si' : 'No' }}</p>
+            <p><strong>Edad:  </strong>{{user.age}}</p>
+            <p><strong>Descripcion:  </strong>{{user.description}}</p>
+        </mat-card-content>
+        <div class="button">
+            <button mat-raised-button (click)="goEditProfile()">Editar Perfil</button>
+            <button mat-raised-button (click)="goEditPassword()">Editar Contraseña</button>
+        </div>
+ 
+    </mat-card>
+</div>

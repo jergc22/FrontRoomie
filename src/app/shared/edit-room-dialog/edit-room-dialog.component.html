@@ -1,0 +1,55 @@
+<h1>Editar Room</h1>
+<div mat-dialog-content class="container">
+    <form [formGroup]="roomForm">
+        <mat-form-field>
+            <mat-label>Titulo</mat-label>
+            <input matInput formControlName="title">
+        </mat-form-field>
+        <div class="options">
+            <mat-slide-toggle formControlName="smoke">Se pùede fumar?</mat-slide-toggle>
+            <mat-slide-toggle formControlName="pet">Se permiten mascotas?</mat-slide-toggle>
+            <mat-slide-toggle formControlName="priv_bath">Baño en habitacion?</mat-slide-toggle>
+            <mat-slide-toggle formControlName="garage">Garaje incluido?</mat-slide-toggle>
+        </div>
+        <mat-form-field>
+            <mat-label>Nº de baños</mat-label>
+            <input matInput type="number" formControlName="n_baths">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Nº de habitaciones</mat-label>
+            <input matInput type="number" formControlName="n_rooms">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Nº de compañeros en el piso</mat-label>
+            <input matInput type="number" formControlName="n_roomies">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Precio</mat-label>
+            <input matInput type="number" formControlName="price">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Direccion</mat-label>
+            <input matInput formControlName="location">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Ciudad</mat-label>
+            <mat-select matInput formControlName="city_id" required>
+                <mat-option *ngFor="let city of cities" [value]="city.id">{{city.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Descripcion</mat-label>
+            <textarea matInput formControlName="description"></textarea>
+        </mat-form-field>
+    </form>
+</div>
+
+<div class="buttons" mat-dialog-actions>
+    <button class="cancel" mat-raised-button (click)="dialogRef.close()">Cancelar</button>
+    <button mat-raised-button class="save" (click)="save()" [disabled]="!roomForm.valid">Guardar</button>
+</div>

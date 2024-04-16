@@ -1,0 +1,11 @@
+<div class="container">
+    <form [formGroup]="addImageForm" (ngSubmit)="onSubmitImage()">
+        <div class="formGroup">
+            <label for="image">Selecciona tu foto de perfil:</label>
+            <input type="file" class="form-control"
+            (change)="onImageChange($event)">
+            <input type="hidden" formControlName="image">
+        </div>
+        <button type="submit">Añadir foto</button>
+    </form>
+</div>

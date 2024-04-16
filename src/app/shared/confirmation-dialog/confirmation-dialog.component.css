@@ -1,0 +1,25 @@
+*{
+    font-family: 'MiFuente';
+}
+
+mat-dialog-content p{
+    font-family: 'MiFuente';
+}
+
+h2{
+    height: fit-content;
+    margin-left: 20px;
+}
+p{
+    height: fit-content;
+}
+
+.cancel{
+    background-color: #cc0000;
+    color: white;
+}
+
+.save{
+    background-color: #007E3E;
+    color: white;
+}

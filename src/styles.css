@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+
+/* styles.scss */
+
+@font-face {
+    font-family: 'MiFuente';
+    src: url('assets/fonts/BOMBARD_.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  html, body { height: fit-content; }
+  body { 
+    top: 0;
+    margin: 0; 
+    font-family: 'MiFuente', sans-serif; 
+    background-color: #f5f5f5;
+  }
+  
+
+  .container{
+    margin-top: 112px;
+    height: fit-content;
+}

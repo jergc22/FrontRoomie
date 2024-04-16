@@ -1,0 +1,61 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+mat-card{
+    margin: 100px;
+    display: flex;
+    justify-content: center;
+    width: 800px;
+}
+mat-card-content{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: x-large;
+}
+a{
+    width: fit-content;
+    margin: 20px;
+}
+
+mat-form-field{
+    width: 500px;
+}
+
+mat-icon{
+    color: #007E3E;
+}
+
+mat-card-actions{
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+mat-card-actions button{
+    background-color: #007E3E;
+    font-family: 'MiFuente';
+    font-size: medium;
+    color: white;
+}
+
+@media(max-width: 610px){
+    mat-card{
+        width: fit-content;
+    }
+
+    mat-form-field{
+        width: 310px;
+    }
+}
